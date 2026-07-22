@@ -1,0 +1,12 @@
+---
+layout: layouts/base.webc
+pagination:
+  data: posts
+  size: 1
+  alias: post
+---
+<h2 @text="post.title"></h2>
+<p class="post-meta" @text="post.dateDisplay"></p>
+<p class="post-subtitle" webc:if="post.subtitle" @text="post.subtitle"></p>
+<article class="post-content" @html="post.html"></article>
+<p><a href="/blog/">&larr; Back to all posts</a></p>

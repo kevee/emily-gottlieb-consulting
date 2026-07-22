@@ -1,0 +1,13 @@
+---
+layout: layouts/base.webc
+title: Blog — Emily Gottlieb Consulting
+---
+<h2>Blog</h2>
+<p webc:if="!posts.length">No posts yet — check back soon!</p>
+<ul class="post-list" webc:if="posts.length">
+  <li webc:for="post of posts">
+    <h3><a :href="`/blog/${post.slug}/`" @text="post.title"></a></h3>
+    <p class="post-meta" @text="post.dateDisplay"></p>
+    <p webc:if="post.subtitle" @text="post.subtitle"></p>
+  </li>
+</ul>
